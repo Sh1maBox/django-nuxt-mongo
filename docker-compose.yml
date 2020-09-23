@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+  backend:
+    command: uvicorn app:app --reload --host 0.0.0.0 --port 8080
+    build: ./backend
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+  frontend:
+    command: yarn run dev
+    build: ./frontend
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
