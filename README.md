@@ -1,2 +1,2 @@
-# django-nuxt-mongo
-Django + Nuxt + MongoDBのテンプレートリポジトリ
+# fastapi-nuxt-mongo
+FastApi + Nuxt + MongoDBのテンプレートリポジトリ
